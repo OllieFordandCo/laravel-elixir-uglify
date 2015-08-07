@@ -16,8 +16,8 @@ elixir.extend('uglify', function(src, output, options){
 	var filter  = gulpFilter(['**/*', '!**/*.min.js']);
 
 	options = options === undefined ? {} : options;
-
-	src = utilities.buildGulpSrc(src, baseDir, '**/*.js');
+	
+	src = src === undefined ? utilities.buildGulpSrc(src, baseDir, '**/*.js') : src;
 
 	gulp.task('uglify', function() {
 
